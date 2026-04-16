@@ -6,94 +6,72 @@
   <title>Mentions légales — TGB Rénovation</title>
   <meta name="robots" content="noindex">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Zen+Dots&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --bg:      #0d0d0d;
-      --bg-mid:  #1a1a1a;
-      --beige:   #F3F0E1;
-      --accent:  #F55E2F;
-      --violet:  #4340E8;
-      --border:  rgba(255,255,255,0.08);
-      --font:    'DM Sans', sans-serif;
-    }
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--beige);
-      font-size: 15px;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-    }
+    /* ── Page-specific overrides ───────────────────────────────────────────── */
 
-    /* Nav */
+    /* Nav : fond solide sur cette page statique */
     nav {
-      padding: 20px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border);
-      background: rgba(13,13,13,0.95);
-      backdrop-filter: blur(12px);
+      background: var(--cream);
+      border-bottom: 1px solid rgba(56,43,38,0.1);
       position: sticky;
-      top: 0;
-      z-index: 100;
     }
-    .nav-logo { font-size: 1.2rem; font-weight: 800; color: var(--beige); text-decoration: none; letter-spacing: -0.02em; }
-    .nav-logo span { color: var(--accent); }
-    .nav-back {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: rgba(243,240,225,0.5);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
-    }
-    .nav-back:hover { color: var(--beige); }
+    /* Masquer burger / menu mobile sur cette page */
+    .nav-burger,
+    .nav-mobile { display: none !important; }
 
-    /* Layout */
+    /* Layout de la page */
     .page-wrap {
-      max-width: 780px;
+      max-width: 800px;
       margin: 0 auto;
-      padding: 72px 48px 120px;
+      padding: 88px 48px 120px;
     }
+
     .page-title {
       font-family: 'Zen Dots', sans-serif;
       font-size: clamp(1.8rem, 4vw, 3rem);
       font-weight: 400;
       line-height: 1.1;
       margin-bottom: 12px;
+      color: var(--brown);
     }
+
     .page-subtitle {
       font-size: 0.85rem;
-      color: rgba(243,240,225,0.4);
+      color: rgba(56,43,38,0.45);
       margin-bottom: 64px;
       padding-bottom: 32px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(56,43,38,0.12);
     }
 
     /* Sections */
     .ml-section {
       margin-bottom: 52px;
       padding-bottom: 52px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(56,43,38,0.1);
     }
     .ml-section:last-child {
       border-bottom: none;
       margin-bottom: 0;
     }
+
     .ml-section h2 {
       font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: var(--accent);
+      color: var(--brown);
+      opacity: 0.45;
       margin-bottom: 20px;
       display: flex;
       align-items: center;
@@ -103,77 +81,105 @@
       content: '';
       width: 24px;
       height: 2px;
-      background: var(--accent);
+      background: var(--brown);
+      opacity: 1;
+      flex-shrink: 0;
     }
-    .ml-section h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--beige);
-      margin-top: 20px;
-      margin-bottom: 6px;
-    }
-    p { color: rgba(243,240,225,0.65); margin-bottom: 12px; }
-    p:last-child { margin-bottom: 0; }
-    strong { color: var(--beige); font-weight: 600; }
-    a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-    a:hover { color: #FF7A52; }
 
+    .ml-section h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    .ml-section p {
+      color: rgba(56,43,38,0.65);
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+    .ml-section p:last-child { margin-bottom: 0; }
+
+    strong { color: var(--brown); font-weight: 600; }
+
+    .ml-section a {
+      color: var(--brown);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      opacity: 0.8;
+    }
+    .ml-section a:hover { opacity: 1; }
+
+    /* Info grid */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2px;
-      margin-top: 8px;
+      margin-top: 12px;
     }
     .info-item {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
+      background: rgba(56,43,38,0.04);
+      border: 1px solid rgba(56,43,38,0.08);
       border-radius: 4px;
       padding: 16px 20px;
     }
     .info-label {
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: rgba(243,240,225,0.35);
+      color: rgba(56,43,38,0.4);
       margin-bottom: 4px;
     }
     .info-value {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 500;
-      color: var(--beige);
+      color: var(--brown);
+    }
+    .info-value a {
+      color: var(--brown);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: rgba(243,240,225,0.3);
+    /* Note petite */
+    .ml-note {
+      font-size: 0.82rem;
+      color: rgba(56,43,38,0.4);
+      margin-top: 12px;
     }
-    footer a { color: rgba(243,240,225,0.3); text-decoration: none; }
 
+    /* Responsive */
     @media (max-width: 768px) {
-      nav { padding: 16px 24px; }
-      .page-wrap { padding: 48px 24px 80px; }
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .page-wrap { padding: 72px 24px 80px; }
       .info-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 8px; padding: 24px; }
     }
   </style>
 </head>
 <body>
 
+<!-- Navigation -->
 <nav>
-  <a href="index.html" class="nav-logo">TGB<span>.</span></a>
-  <a href="index.html" class="nav-back">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
-    </svg>
-    Retour au site
+  <a href="index.html" class="nav-logo">
+    <img src="photos/LOGO%20N.png" alt="TGB Rénovation" class="nav-logo-img">
   </a>
+  <div class="nav-links">
+    <a href="index.html">Présentation</a>
+    <a href="index.html#nos-services">Services</a>
+    <a href="index.html#realisations">Réalisations</a>
+    <a href="index.html#zones">Zones d'intervention</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="nav-cta-wrap">
+    <a href="tel:+33751284043" class="nav-cta">
+      <i class="fa-solid fa-phone nav-cta-icon"></i>
+      <span class="nav-cta-text">07 51 28 40 43</span>
+    </a>
+  </div>
 </nav>
 
 <div class="page-wrap">
@@ -184,40 +190,14 @@
   <!-- 1. Éditeur du site -->
   <div class="ml-section">
     <h2>Éditeur du site</h2>
-    <div class="info-grid">
-      <div class="info-item">
-        <div class="info-label">Raison sociale</div>
-        <div class="info-value">TGB Rénovation</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Forme juridique</div>
-        <div class="info-value">Auto-entrepreneur (EI)</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">SIREN</div>
-        <div class="info-value">879 173 680</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Année de création</div>
-        <div class="info-value">2019</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Activité principale</div>
-        <div class="info-value">Peinture · Sol · Maçonnerie · Plomberie · Chauffage · Électricité</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Zone d'intervention</div>
-        <div class="info-value">Grand Ouest de la France</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Email</div>
-        <div class="info-value"><a href="mailto:contact@tgb-renovation.fr">contact@tgb-renovation.fr</a></div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Téléphone</div>
-        <div class="info-value">+33 (0)5 XX XX XX XX</div>
-      </div>
-    </div>
+    <p><strong>Raison sociale :</strong> TGB Rénovation</p>
+    <p><strong>Forme juridique :</strong> Société par actions simplifiée (SAS)</p>
+    <p><strong>SIREN :</strong> 879 173 680</p>
+    <p><strong>Année de création :</strong> 2019</p>
+    <p><strong>Activité principale :</strong> Peinture · Sol · Maçonnerie · Plomberie · Chauffage · Électricité</p>
+    <p><strong>Zone d'intervention :</strong> Nouvelle-Aquitaine, Bretagne, Pays de la Loire, Île-de-France, Normandie, Centre-Val de Loire</p>
+    <p><strong>Email :</strong> <a href="mailto:contact@tgb-renovation.fr">contact@tgb-renovation.fr</a></p>
+    <p><strong>Téléphone :</strong> <a href="tel:+33751284043">07 51 28 40 43</a></p>
   </div>
 
   <!-- 2. Directeur de la publication -->
@@ -231,23 +211,30 @@
   <div class="ml-section">
     <h2>Hébergement</h2>
     <p>Le site est hébergé par :</p>
-    <div class="info-grid" style="margin-top:12px">
+    <div class="info-grid">
       <div class="info-item">
         <div class="info-label">Hébergeur</div>
-        <div class="info-value">À compléter</div>
+        <div class="info-value">GitHub, Inc.</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Service</div>
+        <div class="info-value">GitHub Pages</div>
       </div>
       <div class="info-item">
         <div class="info-label">Adresse</div>
-        <div class="info-value">À compléter</div>
+        <div class="info-value">88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Site</div>
+        <div class="info-value"><a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">pages.github.com</a></div>
       </div>
     </div>
-    <p style="margin-top:12px; font-size:0.85rem;">Conformément à l'article 6 de la LCEN, les coordonnées de l'hébergeur doivent être renseignées.</p>
   </div>
 
   <!-- 4. Propriété intellectuelle -->
   <div class="ml-section">
     <h2>Propriété intellectuelle</h2>
-    <p>L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, sons, logiciels...) est la propriété exclusive de TGB Rénovation, sauf mention contraire explicite.</p>
+    <p>L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, sons, logiciels…) est la propriété exclusive de TGB Rénovation, sauf mention contraire explicite.</p>
     <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de TGB Rénovation.</p>
     <p>Toute exploitation non autorisée du site ou de son contenu sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
   </div>
@@ -296,14 +283,21 @@
   <div class="ml-section">
     <h2>Droit applicable</h2>
     <p>Les présentes mentions légales sont régies par le droit français. En cas de litige, et après tentative de recherche d'une solution amiable, les tribunaux français seront seuls compétents.</p>
-    <p style="margin-top:16px; font-size:0.82rem; color:rgba(243,240,225,0.35);">Dernière mise à jour : avril 2026</p>
+    <p class="ml-note">Dernière mise à jour : avril 2026</p>
   </div>
 
 </div>
 
+<!-- Footer -->
 <footer>
-  <span>© 2026 TGB Rénovation — SIREN 879 173 680</span>
-  <a href="index.html">Retour au site</a>
+  <div class="footer-logo">
+    <img src="photos/LOGO%20W.png" alt="TGB Rénovation" class="footer-logo-img">
+  </div>
+  <div class="footer-copy">© 2026 TGB Rénovation. Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="https://flownami.com/">(c)</a>
+  </div>
 </footer>
 
 </body>

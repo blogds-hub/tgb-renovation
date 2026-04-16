@@ -150,7 +150,7 @@ nav {
   gap: 8px;
 }
 .nav-cta:hover { opacity: 0.8; }
-.nav-cta-icon { display: none; }
+.nav-cta-icon { display: block; }
 
 /* Keywords hover section */
 .keywords-section {
@@ -445,6 +445,7 @@ nav {
 /* Section Layout */
 section { padding: 120px 48px; }
 .section-label {
+  font-family: 'Zen Dots', sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -503,6 +504,7 @@ section { padding: 120px 48px; }
   margin-bottom: 72px;
 }
 .svc-pills-label {
+  font-family: 'Zen Dots', sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
