@@ -145,8 +145,12 @@ nav {
   color: var(--cream);
   opacity: 1;
   border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .nav-cta:hover { opacity: 0.8; }
+.nav-cta-icon { display: none; }
 
 /* Keywords hover section */
 .keywords-section {
@@ -913,6 +917,14 @@ section { padding: 120px 48px; }
 
 /* Réalisations */
 
+.gallery-outer {
+  position: relative;
+}
+
+.gallery-arrow--next {
+  display: none;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -941,6 +953,13 @@ section { padding: 120px 48px; }
 }
 @media (max-width: 640px) {
   .gallery-item:hover img { transform: none; }
+  .gallery-outer {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
   .gallery-grid {
     display: flex;
     flex-direction: row;
@@ -948,18 +967,39 @@ section { padding: 120px 48px; }
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 12px;
-    padding: 0 24px 16px;
-    margin-top: 32px;
+    padding: 0 24px 0;
+    margin-top: 0;
+    width: 100%;
     scrollbar-width: none;
   }
   .gallery-grid::-webkit-scrollbar { display: none; }
   .gallery-item {
-    flex: 0 0 82vw;
-    height: 56vw;
-    border-radius: 16px;
+    flex: 0 0 75vw;
+    height: 52vw;
+    border-radius: 12px;
     scroll-snap-align: start;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
-  .gallery-item--tall { grid-row: span 1; }
+  .gallery-item--tall { grid-row: span 1; height: 52vw; }
+  .gallery-arrow--next {
+    display: flex;
+    position: static;
+    background: none;
+    border: none;
+    color: var(--brown);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 4px 6px;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    margin-right: 24px;
+  }
+  .gallery-arrow--next.is-hidden {
+    opacity: 0;
+  }
 }
 
 /* Bande défilante travaux */
@@ -1170,94 +1210,77 @@ section { padding: 120px 48px; }
 /* Grille de villes */
 .zones-area-grid-header {
   grid-column: 1 / -1;
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  opacity: 0.4;
-  padding-bottom: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+  padding-bottom: 20px;
 }
 .zones-area-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  border-top: 1px solid;
+  gap: 3px;
 }
 .zones-area {
-  padding: 28px 24px 28px 0;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  padding: 20px 24px;
+  background: #f9f8f2;
+  cursor: pointer;
 }
-.zones-area:nth-child(2n) { border-right: none; padding-right: 0; padding-left: 24px; }
 
-.zones-area:nth-last-child(-n+2) { border-bottom: none; }
 .zones-area-title {
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: 12px;
-  opacity: 0.45;
+  opacity: 0.6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.2;
 }
+.zones-area-title::after {
+  content: '+';
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: 0.5;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.zones-area.is-open .zones-area-title::after { transform: rotate(45deg); }
+
 .zones-area-list {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease, padding-top 0.3s ease;
+  padding-top: 0;
 }
-.zones-area-list li { font-size: 0.88rem; line-height: 1.5; }
+.zones-area.is-open .zones-area-list {
+  max-height: 200px;
+  opacity: 1;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.zones-area-list li { font-size: 0.72rem; line-height: 1.4; opacity: 0.7; }
 
 @media (max-width: 1200px) { .zones-layout { grid-template-columns: 220px 1fr; gap: 48px; } }
 @media (max-width: 1024px) { .zones-layout { grid-template-columns: 1fr; } .zones-map { max-width: 260px; } }
 @media (max-width: 640px) {
   .zones-layout { grid-template-columns: 1fr; gap: 32px; }
   .zones-map { max-width: 220px; margin: 0 auto; }
-  .zones-area-grid { grid-template-columns: 1fr; border-top: 1px solid; }
+  .zones-area-grid { grid-template-columns: 1fr; }
+  .zones-area-grid { gap: 0; }
   .zones-area,
-  .zones-area:nth-child(2n),
-  .zones-area:nth-last-child(-n+2) {
-    border-right: none;
-    border-left: none;
-    border-top: none;
-    border-bottom: 1px solid;
-    padding: 0;
-    cursor: pointer;
-  }
+  .zones-area:nth-child(odd) { padding: 0; background: none; border-bottom: 1px solid; }
   .zones-area:last-child { border-bottom: none; }
-  .zones-area-title {
-    font-size: 0.75rem;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    opacity: 1;
-    letter-spacing: 0.06em;
-    line-height: 1.2;
-    gap: 12px;
-  }
-  .zones-area-title::after {
-    content: '+';
-    font-size: 1rem;
-    font-weight: 300;
-    opacity: 0.4;
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-  }
-  .zones-area.is-open .zones-area-title::after { transform: rotate(45deg); }
-  .zones-area-list {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.35s ease, opacity 0.3s ease, padding-bottom 0.3s ease;
-    padding-bottom: 0;
-  }
-  .zones-area.is-open .zones-area-list {
-    max-height: 300px;
-    opacity: 1;
-    padding-bottom: 10px;
-  }
-  .zones-area-list li { font-size: 0.75rem; line-height: 1.3; }
+  .zones-area-title { font-size: 0.75rem; padding: 10px 0; opacity: 1; letter-spacing: 0.06em; }
+  .zones-area-list li { font-size: 0.72rem; }
 }
 
 /* FAQ */
@@ -1484,6 +1507,9 @@ footer {
   .nav-logo-img { transition: height 0.3s ease; }
   .nav-links { display: none; }
   .nav-burger { display: flex; }
+  .nav-cta { padding: 7px 12px; }
+  .nav-cta-icon { display: block; }
+  .nav-cta-text { font-size: 0.65rem; font-weight: 400; }
 
   nav.is-scrolled {
     padding: 8px 24px;

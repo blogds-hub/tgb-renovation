@@ -200,13 +200,23 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-// ─── Accordéon zones d'intervention (mobile) ─────────────────────────────────
+// ─── Accordéon zones d'intervention ──────────────────────────────────────────
 document.querySelectorAll('.zones-area').forEach(area => {
   area.addEventListener('click', () => {
-    if (window.innerWidth > 640) return;
     area.classList.toggle('is-open');
   });
 });
+
+// ─── Flèche hint galerie réalisations (mobile) ───────────────────────────────
+const galleryGrid = document.getElementById('gallery-realisations');
+const galleryNext = document.querySelector('.gallery-arrow--next');
+
+if (galleryGrid && galleryNext) {
+  galleryGrid.addEventListener('scroll', () => {
+    const atEnd = galleryGrid.scrollLeft >= galleryGrid.scrollWidth - galleryGrid.clientWidth - 16;
+    galleryNext.classList.toggle('is-hidden', atEnd);
+  }, { passive: true });
+}
 
 // ─── Lightbox galerie réalisations ────────────────────────────────────────────
 const lightbox = document.getElementById('lightbox');
