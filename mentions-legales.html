@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions légales — TGB Rénovation</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Zen+Dots&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg:      #0d0d0d;
+      --bg-mid:  #1a1a1a;
+      --beige:   #F3F0E1;
+      --accent:  #F55E2F;
+      --violet:  #4340E8;
+      --border:  rgba(255,255,255,0.08);
+      --font:    'DM Sans', sans-serif;
+    }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--beige);
+      font-size: 15px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    nav {
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: rgba(13,13,13,0.95);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo { font-size: 1.2rem; font-weight: 800; color: var(--beige); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--accent); }
+    .nav-back {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(243,240,225,0.5);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--beige); }
+
+    /* Layout */
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 72px 48px 120px;
+    }
+    .page-title {
+      font-family: 'Zen Dots', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .page-subtitle {
+      font-size: 0.85rem;
+      color: rgba(243,240,225,0.4);
+      margin-bottom: 64px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Sections */
+    .ml-section {
+      margin-bottom: 52px;
+      padding-bottom: 52px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ml-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .ml-section h2 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ml-section h2::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+    }
+    .ml-section h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--beige);
+      margin-top: 20px;
+      margin-bottom: 6px;
+    }
+    p { color: rgba(243,240,225,0.65); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--beige); font-weight: 600; }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: #FF7A52; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 8px;
+    }
+    .info-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 16px 20px;
+    }
+    .info-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(243,240,225,0.35);
+      margin-bottom: 4px;
+    }
+    .info-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--beige);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: rgba(243,240,225,0.3);
+    }
+    footer a { color: rgba(243,240,225,0.3); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .page-wrap { padding: 48px 24px 80px; }
+      .info-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 8px; padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">TGB<span>.</span></a>
+  <a href="index.html" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+    </svg>
+    Retour au site
+  </a>
+</nav>
+
+<div class="page-wrap">
+
+  <h1 class="page-title">Mentions légales</h1>
+  <p class="page-subtitle">Conformément aux articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique (LCEN)</p>
+
+  <!-- 1. Éditeur du site -->
+  <div class="ml-section">
+    <h2>Éditeur du site</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">Raison sociale</div>
+        <div class="info-value">TGB Rénovation</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Forme juridique</div>
+        <div class="info-value">Auto-entrepreneur (EI)</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">SIREN</div>
+        <div class="info-value">879 173 680</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Année de création</div>
+        <div class="info-value">2019</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Activité principale</div>
+        <div class="info-value">Peinture · Sol · Maçonnerie · Plomberie · Chauffage · Électricité</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Zone d'intervention</div>
+        <div class="info-value">Grand Ouest de la France</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Email</div>
+        <div class="info-value"><a href="mailto:contact@tgb-renovation.fr">contact@tgb-renovation.fr</a></div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Téléphone</div>
+        <div class="info-value">+33 (0)5 XX XX XX XX</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Directeur de la publication -->
+  <div class="ml-section">
+    <h2>Directeur de la publication</h2>
+    <p>Le directeur de la publication est le gérant de TGB Rénovation, responsable du contenu éditorial du site.</p>
+    <p>Contact : <a href="mailto:contact@tgb-renovation.fr">contact@tgb-renovation.fr</a></p>
+  </div>
+
+  <!-- 3. Hébergement -->
+  <div class="ml-section">
+    <h2>Hébergement</h2>
+    <p>Le site est hébergé par :</p>
+    <div class="info-grid" style="margin-top:12px">
+      <div class="info-item">
+        <div class="info-label">Hébergeur</div>
+        <div class="info-value">À compléter</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Adresse</div>
+        <div class="info-value">À compléter</div>
+      </div>
+    </div>
+    <p style="margin-top:12px; font-size:0.85rem;">Conformément à l'article 6 de la LCEN, les coordonnées de l'hébergeur doivent être renseignées.</p>
+  </div>
+
+  <!-- 4. Propriété intellectuelle -->
+  <div class="ml-section">
+    <h2>Propriété intellectuelle</h2>
+    <p>L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, sons, logiciels...) est la propriété exclusive de TGB Rénovation, sauf mention contraire explicite.</p>
+    <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de TGB Rénovation.</p>
+    <p>Toute exploitation non autorisée du site ou de son contenu sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
+  </div>
+
+  <!-- 5. Données personnelles -->
+  <div class="ml-section">
+    <h2>Données personnelles</h2>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi Informatique et Libertés du 6 janvier 1978 modifiée, vous disposez des droits suivants sur vos données personnelles :</p>
+
+    <h3>Données collectées</h3>
+    <p>Le site peut collecter les données suivantes via le formulaire de contact : <strong>nom, prénom, adresse email, numéro de téléphone</strong> et la description de votre projet. Ces données sont utilisées exclusivement pour répondre à vos demandes de devis ou d'information.</p>
+
+    <h3>Finalité du traitement</h3>
+    <p>Les données collectées sont utilisées uniquement pour le traitement de votre demande de contact ou de devis. Elles ne sont ni cédées, ni vendues à des tiers.</p>
+
+    <h3>Durée de conservation</h3>
+    <p>Les données sont conservées pendant une durée maximale de <strong>3 ans</strong> à compter du dernier contact.</p>
+
+    <h3>Vos droits</h3>
+    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition au traitement de vos données. Pour exercer ces droits, adressez votre demande à : <a href="mailto:contact@tgb-renovation.fr">contact@tgb-renovation.fr</a></p>
+    <p>En cas de désaccord, vous pouvez introduire une réclamation auprès de la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a></p>
+  </div>
+
+  <!-- 6. Cookies -->
+  <div class="ml-section">
+    <h2>Cookies</h2>
+    <p>Ce site peut utiliser des cookies techniques nécessaires au bon fonctionnement des pages. Ces cookies ne collectent aucune donnée personnelle à des fins publicitaires ou de profilage.</p>
+    <p>Conformément à la directive européenne ePrivacy, vous êtes informé de leur utilisation lors de votre première visite. Vous pouvez configurer votre navigateur pour refuser les cookies, ce qui pourrait toutefois affecter certaines fonctionnalités du site.</p>
+  </div>
+
+  <!-- 7. Liens hypertextes -->
+  <div class="ml-section">
+    <h2>Liens hypertextes</h2>
+    <p>Le site peut contenir des liens vers d'autres sites internet. TGB Rénovation n'est pas responsable du contenu de ces sites externes ni des pratiques de protection des données qu'ils appliquent.</p>
+    <p>La création de liens hypertextes vers le site est autorisée sans demande préalable, sous réserve que le site d'origine ne contienne pas de contenu illicite ou préjudiciable.</p>
+  </div>
+
+  <!-- 8. Limitation de responsabilité -->
+  <div class="ml-section">
+    <h2>Limitation de responsabilité</h2>
+    <p>TGB Rénovation s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site. Toutefois, TGB Rénovation ne saurait être tenu responsable des omissions, inexactitudes et carences dans la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires.</p>
+    <p>TGB Rénovation ne peut être tenu responsable des dommages directs ou indirects résultant de l'accès au site ou de l'utilisation des informations qui y sont publiées.</p>
+  </div>
+
+  <!-- 9. Droit applicable -->
+  <div class="ml-section">
+    <h2>Droit applicable</h2>
+    <p>Les présentes mentions légales sont régies par le droit français. En cas de litige, et après tentative de recherche d'une solution amiable, les tribunaux français seront seuls compétents.</p>
+    <p style="margin-top:16px; font-size:0.82rem; color:rgba(243,240,225,0.35);">Dernière mise à jour : avril 2026</p>
+  </div>
+
+</div>
+
+<footer>
+  <span>© 2026 TGB Rénovation — SIREN 879 173 680</span>
+  <a href="index.html">Retour au site</a>
+</footer>
+
+</body>
+</html>
