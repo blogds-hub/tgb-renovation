@@ -151,6 +151,8 @@ nav {
 }
 .nav-cta:hover { opacity: 0.8; }
 .nav-cta-icon { display: block; }
+.nav-instagram { font-size: 1.2rem; color: var(--brown); opacity: 0.5; transition: opacity 0.2s; }
+.nav-instagram:hover { opacity: 1; }
 
 /* Keywords hover section */
 .keywords-section {
