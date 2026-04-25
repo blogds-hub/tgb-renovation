@@ -1410,9 +1410,10 @@ footer {
 }
 .footer-logo-img { height: 60px; width: auto; display: block; }
 .footer-copy { font-size: 0.8rem; opacity: 0.55; }
-.footer-links { display: flex; gap: 24px; }
+.footer-links { display: flex; gap: 24px; align-items: center; }
 .footer-links a { font-size: 0.8rem; color: var(--cream); opacity: 0.55; transition: opacity 0.2s; }
 .footer-links a:hover { opacity: 1; }
+.footer-links .fa-instagram { font-size: 1.1rem; }
 
 /* Responsive */
 @media (max-width: 1024px) {
