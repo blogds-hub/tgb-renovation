@@ -1278,6 +1278,17 @@ section { padding: 120px 48px; }
   padding-bottom: 20px;
 }
 .zones-area-list li { font-size: 0.72rem; line-height: 1.4; opacity: 0.7; }
+.zones-area-list li a { color: inherit; text-decoration: underline; text-decoration-color: rgba(56,43,38,0.3); text-underline-offset: 2px; transition: opacity 0.2s; }
+.zones-area-list li a:hover { opacity: 1; text-decoration-color: var(--brown); }
+
+/* City links block */
+.zones-city-links { margin-top: 48px; }
+.zones-city-links-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 16px; }
+.zones-city-links-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.zones-city-link { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; font-weight: 500; color: var(--brown); text-decoration: none; border: 1px solid rgba(56,43,38,0.22); border-radius: 100px; padding: 7px 15px; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+.zones-city-link i { font-size: 0.65rem; opacity: 0.6; }
+.zones-city-link:hover { background: var(--brown); color: var(--cream); border-color: var(--brown); }
+.zones-city-link:hover i { opacity: 1; }
 
 @media (max-width: 1200px) { .zones-layout { grid-template-columns: 220px 1fr; gap: 48px; } }
 @media (max-width: 1024px) { .zones-layout { grid-template-columns: 1fr; } .zones-map { max-width: 260px; } }
