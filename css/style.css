@@ -70,6 +70,12 @@ nav {
   align-items: center;
   background: transparent;
   color: var(--brown);
+  transition: background 0.35s ease, backdrop-filter 0.35s ease;
+}
+nav.is-scrolled {
+  background: rgba(243, 241, 226, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 .nav-logo { grid-column: 1; justify-self: start; }
 .nav-logo-img { height: 100px; width: auto; display: block; }
@@ -151,8 +157,8 @@ nav {
 }
 .nav-cta:hover { opacity: 0.8; }
 .nav-cta-icon { display: block; }
-.nav-instagram { font-size: 1.2rem; color: var(--brown); opacity: 0.5; transition: opacity 0.2s; }
-.nav-instagram:hover { opacity: 1; }
+.nav-links .nav-instagram { font-size: 1.3rem; opacity: 0.8; transition: opacity 0.2s; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.nav-links .nav-instagram:hover { opacity: 1; }
 
 /* Keywords hover section */
 .keywords-section {

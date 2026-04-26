@@ -192,13 +192,11 @@ document.querySelectorAll('.svc-card').forEach(card => {
   });
 });
 
-// ─── Nav scroll compact (mobile) ─────────────────────────────────────────────
+// ─── Nav scroll blur (tous écrans via Locomotive) ────────────────────────────
 const navEl = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-  if (window.innerWidth <= 768) {
-    navEl.classList.toggle('is-scrolled', window.scrollY > 40);
-  }
-}, { passive: true });
+locoScroll.on('scroll', ({ scroll }) => {
+  navEl.classList.toggle('is-scrolled', scroll.y > 40);
+});
 
 // ─── Accordéon zones d'intervention ──────────────────────────────────────────
 document.querySelectorAll('.zones-area').forEach(area => {
