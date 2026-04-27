@@ -53,6 +53,16 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+// ─── Hash URL au chargement (ex: index.html#zones depuis une autre page) ──────
+if (window.location.hash) {
+  const hashTarget = document.querySelector(window.location.hash);
+  if (hashTarget) {
+    setTimeout(() => {
+      locoScroll.scrollTo(hashTarget, { offset: -80, duration: 0 });
+    }, 300);
+  }
+}
+
 // ─── Counter animation ────────────────────────────────────────────────────────
 function animateCounter(el) {
   const target = parseInt(el.dataset.count, 10);

@@ -1,0 +1,2 @@
+const burger=document.querySelector('.nav-burger'),mobileMenu=document.getElementById('nav-mobile');
+if(burger&&mobileMenu){burger.addEventListener('click',()=>{const o=mobileMenu.classList.toggle('is-open');burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});mobileMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{mobileMenu.classList.remove('is-open');burger.classList.remove('is-open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}));}
