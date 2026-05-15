@@ -429,6 +429,99 @@ nav {
 }
 .city-lightbox.is-open img { transform: scale(1); }
 
+/* ── Salle de bain section ─────────────────────────────────────────────────── */
+.city-sdb-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+  margin-top: 0;
+}
+.city-sdb-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.city-sdb-list li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding-left: 18px;
+  position: relative;
+}
+.city-sdb-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 9px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--brown);
+  opacity: 0.4;
+}
+.city-sdb-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--brown);
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+.city-sdb-cta:hover { opacity: 0.65; }
+.city-sdb-visual {
+  position: relative;
+  padding-bottom: 24px;
+}
+.city-sdb-visual img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.city-sdb-badge {
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  background: var(--brown);
+  color: var(--cream);
+  padding: 18px 22px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.city-sdb-badge strong {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
+.city-sdb-badge span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.city-sdb-badge small {
+  font-size: 0.7rem;
+  opacity: 0.55;
+}
+@media (max-width: 1024px) {
+  .city-sdb-layout { gap: 32px; }
+  .city-sdb-badge { left: 0; }
+}
+@media (max-width: 768px) {
+  .city-sdb-layout { grid-template-columns: 1fr; gap: 28px; }
+  .city-sdb-visual { padding-bottom: 0; }
+  .city-sdb-visual img { aspect-ratio: 16 / 9; }
+  .city-sdb-badge { position: static; margin-top: 12px; border-radius: 8px; }
+}
+
 /* ── Responsive ────────────────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .city-stats-grid { grid-template-columns: repeat(2, 1fr); }
