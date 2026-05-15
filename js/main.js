@@ -186,7 +186,7 @@ if (devisForm) {
       }
     } catch (err) {
       status.className = 'form-status form-status--err';
-      status.textContent = `Une erreur est survenue (${err.message}). Veuillez réessayer ou nous appeler directement.`;
+      status.textContent = 'Une erreur est survenue. Veuillez réessayer ou nous appeler directement.';
     } finally {
       btn.disabled = false;
       btn.innerHTML = originalHTML;
